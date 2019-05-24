@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать статью</title>
+</head>
+<header>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</header>
+<body>
+<div class="header"><img src="{% static 'image/logo.png' %}"></div>
+<div id="linker"><a class="vse-zapisi" href="{% url 'archive:archive' %}">Все записи</a></div><br>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+</body>
+</html>
